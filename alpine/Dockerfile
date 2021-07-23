@@ -17,7 +17,8 @@ RUN cd /home/node/xen-orchestra \
     && rm -rf /home/node/xen-orchestra/.git /home/node/xen-orchestra/patches
 
 # build
-RUN cd /home/node/xen-orchestra
+WORKDIR /home/node/xen-orchestra
+RUN ls -la
 RUN yarn config set network-timeout 300000
 RUN yarn
 RUN yarn build
