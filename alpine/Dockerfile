@@ -17,10 +17,10 @@ RUN cd /home/node/xen-orchestra \
     && rm -rf /home/node/xen-orchestra/.git /home/node/xen-orchestra/patches
 
 # build
-RUN cd /home/node/xen-orchestra &&\
-    yarn config set network-timeout 300000 &&\
-    yarn &&\
-    yarn build
+RUN cd /home/node/xen-orchestra
+RUN yarn config set network-timeout 300000
+RUN yarn
+RUN yarn build
 
 # plugins
 COPY link_plugins.sh /home/node/xen-orchestra/packages/xo-server/link_plugins.sh
