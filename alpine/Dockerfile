@@ -20,8 +20,7 @@ RUN cd /home/node/xen-orchestra \
 WORKDIR /home/node/xen-orchestra
 RUN ls -la
 RUN yarn config set network-timeout 300000
-RUN yarn --verbose
-RUN yarn build --verbose
+RUN yarn build
 
 # plugins
 COPY link_plugins.sh /home/node/xen-orchestra/packages/xo-server/link_plugins.sh
